@@ -1,8 +1,6 @@
-# simpleLi Plugin
+# SimpleLi Plugin
 
 ## A plugin to select &lt;li> elements easily.
-
----
 
 The plugin requires an object that may contain keys:
 
@@ -26,12 +24,15 @@ Options:
 
 **ATENTION:** The every- option uses nth-child, which starts with index 1, instead of 0
 
+---
 
 #### The *starting_at* key tells from which element to start the selection.
 
 Options:
 
 + number (by default it is zero)
+
+---
 
 #### The *each* key serves to iterate separately or grab the entere collection of elements.
 
