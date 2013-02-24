@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <title> Simple Li </title>
+    <script src="jquery-1.9.1.min.js"></script>
+    <script src="jquery.simpleli.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li> 1 </li>
+      <li> 1 </li>
+      <li> 1 </li>
+      <li> 1 </li>
+      <li> 1 </li>
+      <li> 1 </li>
+      <li> 1 </li>
+      <li> 1 </li>
+      <li> 1 </li>
+      <li> 1 </li>
+    </ul>
+
+    <ul>
+      <li> 2 </li>
+      <li> 2 </li>
+      <li> 2 </li>
+      <li> 2 </li>
+      <li> 2 </li>
+      <li> 2 </li>
+      <li> 2 </li>
+      <li> 2 </li>
+      <li> 2 </li>
+    </ul>
+
+  <script>
+    // Selects only even
+    $('ul').simpleLi({pattern: 'even'}, function() {
+      $(this).css({'background-color': 'red'});
+    });
+    // Selects only odd
+    $('ul').simpleLi({pattern: 'odd'}, function() {
+      $(this).css({'background-color': 'blue'});
+    });
+
+    // Selects the first five <li> elements starting at 1
+    $('ul').simpleLi({pattern: 'first-4', starting_at: 1}, function() {
+      $(this).css({'background-color': 'green'});
+    });
+
+    // Selects the last three <li> elements.
+    $('ul').simpleLi({pattern: 'last-3'}, function() {
+      $(this).css({'background-color': 'yellow'});
+    });
+
+    // Selects every two elements starting at the first element.
+    $('ul').simpleLi({pattern: 'every-3', starting_at: 1, each: true}, function(index) {
+      $(this).css({backgroundColor: 'black', color: 'white'});
+      $(this).html('Novo index: ' + index);
+    });
+
+    // Selects only the third element (index 2).
+    $('ul').simpleLi({pattern: 'only-2', each: true}, function(index) {
+      $(this).css({'background-color': 'orange'});
+      $(this).html('Click me!');
+      $(this).click(function() { alert('Yay!') });
+    });
+
+    // Selects all elements
+    // Selects only the third element (index 2).
+    $('ul').simpleLi({pattern: 'all'}, function() {
+      $(this).hover(
+        function () {
+          $(this).html('Hovering!');
+        },
+        function () {
+          $(this).html('Not hovering.. :(');
+        }
+      );
+    });
+  </script>
+  </body>
+</html>
