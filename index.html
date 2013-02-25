@@ -32,40 +32,39 @@
 
   <script>
     // Selects only even
-    $('ul').simpleLi({pattern: 'even'}, function() {
+    $('ul').simpleLi({option: 'even'}, function() {
       $(this).css({'background-color': 'red'});
     });
     // Selects only odd
-    $('ul').simpleLi({pattern: 'odd'}, function() {
+    $('ul').simpleLi({option: 'odd'}, function() {
       $(this).css({'background-color': 'blue'});
     });
 
     // Selects the first five <li> elements starting at 1
-    $('ul').simpleLi({pattern: 'first-4', starting_at: 1}, function() {
+    $('ul').simpleLi({option: 'first-4', start_at: 1}, function() {
       $(this).css({'background-color': 'green'});
     });
 
     // Selects the last three <li> elements.
-    $('ul').simpleLi({pattern: 'last-3'}, function() {
+    $('ul').simpleLi({option: 'last-3'}, function() {
       $(this).css({'background-color': 'yellow'});
     });
 
     // Selects every two elements starting at the first element.
-    $('ul').simpleLi({pattern: 'every-3', starting_at: 1, each: true}, function(index) {
+    $('ul').simpleLi({option: 'every-3', start_at: 1, each: true}, function(index) {
       $(this).css({backgroundColor: 'black', color: 'white'});
       $(this).html('Novo index: ' + index);
     });
 
     // Selects only the third element (index 2).
-    $('ul').simpleLi({pattern: 'only-2', each: true}, function(index) {
+    $('ul').simpleLi({option: 'only-2', each: true}, function(index) {
       $(this).css({'background-color': 'orange'});
       $(this).html('Click me!');
       $(this).click(function() { alert('Yay!') });
     });
 
     // Selects all elements
-    // Selects only the third element (index 2).
-    $('ul').simpleLi({pattern: 'all'}, function() {
+    $('ul').simpleLi({option: 'all', start_at: 3}, function() {
       $(this).hover(
         function () {
           $(this).html('Hovering!');
