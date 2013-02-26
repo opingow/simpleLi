@@ -1,5 +1,4 @@
 (function($) {
-
   $.fn.simpleLi = function(options, callback) {
     
     var settings = $.extend( {
@@ -7,9 +6,9 @@
       start_at: 0,
       order: 'asc',
       separator: '.'
-    }, options);
+    }, options),
 
-    var methods = {
+    methods = {
       odd: function() {
         return this.children("li:odd");
       },
@@ -37,9 +36,9 @@
       only: function(index) {
         return this.children('li').eq(index);
       }
-    };
+    },
 
-    var actions = {
+    actions = {
       remove: function(lis) {
         lis.remove();
       },
@@ -71,8 +70,8 @@
 
       sort_letter: function(lis) {
         return lis.sort(function(a, b) { 
-          var txtA = $(a).text().toUpperCase(); 
-          var txtB = $(b).text().toUpperCase(); 
+          var txtA = $(a).text().toUpperCase(), 
+              txtB = $(b).text().toUpperCase(); 
 
           return (txtA < txtB) ? -1 : (txtA > txtB) ? 1 : 0;
         });  
@@ -80,8 +79,8 @@
 
       sort_number: function(lis) {
         return lis.sort(function(a, b) { 
-          var numA = parseFloat($(a).text());
-          var numB = parseFloat($(b).text()); 
+          var numA = parseFloat($(a).text()),
+              numB = parseFloat($(b).text()); 
 
           return (numA - numB);
         });  
@@ -91,13 +90,13 @@
         var re = new RegExp('[^\\d' + settings.separator + '-]+', 'gi');
 
         return lis.sort(function(a, b) { 
-          var numA = parseFloat($(a).text().replace(re, '').replace(/,/g, '.'));
-          var numB = parseFloat($(b).text().replace(re, '').replace(/,/g, '.')); 
+          var numA = parseFloat($(a).text().replace(re, '').replace(/,/g, '.')),
+              numB = parseFloat($(b).text().replace(re, '').replace(/,/g, '.')); 
 
           return (numA - numB);
         });  
       }
-    }
+    };
 
     return this.each(function() {
       var ul = $(this);
@@ -106,7 +105,6 @@
         var contents = settings.option.split('-'),
             option = contents[0],
             quantity = parseInt(contents[1], 10), //NaN nos metodos 'even', 'odd' e 'all'
-
             lis = methods[option].call(ul, quantity); 
 
         if(settings.hasOwnProperty("action")) {
