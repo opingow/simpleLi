@@ -1,6 +1,6 @@
 # SimpleLi Plugin
 
-## A plugin to select &lt;li> elements easily.
+## A jquery plugin to select &lt;li> elements easily.
 
 The plugin requires an object that may contain keys:
 
@@ -59,7 +59,7 @@ Options:
 + sort_number (sort by number)
 + sort_money  (sort by money values)
 
-**The *sort* actions works with the option *all*.**
+###### The *sort* actions works with the option *all*.
 
 ---
 
