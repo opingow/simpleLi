@@ -25,7 +25,7 @@ Options:
 + first-[number]  (ex: first-3)
 + last-[number]   (ex: last-2)
 
-** The *every* option uses nth-child, which starts with index 1, instead of 0 **
+###### The *every* option uses nth-child, which starts with index 1, instead of 0
 
 ---
 
@@ -35,11 +35,11 @@ Options:
 
 + number (by default it is zero)
 
-** The options *even*, *odd* and *last* ignores the start_at**
+###### The options *even*, *odd* and *last* ignores the start_at
 
 ---
 
-#### The *each* key serves to iterate separately or grab the entire collection of elements.
+#### The *each* key is used to iterate separately or grab the entire collection of elements.
 
 Options:
 
@@ -47,7 +47,7 @@ Options:
 
 ---
 
-#### The *action* key serves to specify an action to the elements selected.
+#### The *action* key is used to specify an action to be executed after the elements are selected.
 
 Options:
 
@@ -63,17 +63,18 @@ Options:
 
 ---
 
-#### The *order* key serves to tell the order of the sort action.
+#### The *order* key specify the order of the sort action.
 
 Options:
 
 + asc (default)
 + desc
 
-*It will be ignored if not used in a sort action.*
+###### It will be ignored if not used in a sort action.*
+
 ---
 
-#### The *separator* key serves to tell which character is used to separate the decimal places in a value. 
+#### The *separator* key specify the character that is used to separate the decimal places in a value. 
 
 Options:
 
@@ -81,7 +82,7 @@ Options:
 
 Ex: R$ 15,25 has separator *','* 
 
-*It will be ignored if not used in a sort action.*
+###### It will be ignored if not used in a sort action.
 
 ---
 
