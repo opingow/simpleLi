@@ -5,32 +5,78 @@
     <script src="jquery.simpleli.js"></script>
   </head>
   <body>
-    <ul>
-      <li> 1 </li>
-      <li> 1 </li>
-      <li> 1 </li>
-      <li> 1 </li>
-      <li> 1 </li>
-      <li> 1 </li>
-      <li> 1 </li>
-      <li> 1 </li>
-      <li> 1 </li>
-      <li> 1 </li>
+    <ul id="sorted_number">
+      <li id="l0"> 0 </li>
+      <li id="l1"> 1 </li>
+      <li id="l2"> 2 </li>
+      <li id="l3"> 3 </li>
+      <li id="l4"> 4 </li>
+      <li id="l5"> 5 </li>
+      <li id="l6"> 6 </li>
+      <li id="l7"> 7 </li>
+      <li id="l8"> 8 </li>
+      <li id="l9"> 9 </li>
     </ul>
 
-    <ul>
-      <li> 2 </li>
-      <li> 2 </li>
-      <li> 2 </li>
-      <li> 2 </li>
-      <li> 2 </li>
-      <li> 2 </li>
-      <li> 2 </li>
-      <li> 2 </li>
-      <li> 2 </li>
+    <ul id="sorted_letter">
+      <li id="la"> a </li>
+      <li id="lb"> b </li>
+      <li id="lc"> c </li>
+      <li id="ld"> d </li>
+      <li id="le"> e </li>
+      <li id="lf"> f </li>
+      <li id="lg"> g </li>
+      <li id="lh"> h </li>
+      <li id="li"> i </li>
+      <li id="lj"> j </li>
     </ul>
 
+    <ul id="unsorted_number">
+      <li id="l0"> 0 </li>
+      <li id="l2"> 2 </li>
+      <li id="l1"> 1 </li>
+      <li id="l7"> 7 </li>
+      <li id="l4"> 4 </li>
+      <li id="l9"> 9 </li>
+      <li id="l6"> 6 </li>
+      <li id="l3"> 3 </li>
+      <li id="l8"> 8 </li>
+      <li id="l5"> 5 </li>
+    </ul>
+
+    <ul id="unsorted_letter">
+      <li id="la"> a </li>
+      <li id="lh"> h </li>
+      <li id="lc"> c </li>
+      <li id="ld"> d </li>
+      <li id="lj"> j </li>
+      <li id="lf"> f </li>
+      <li id="lg"> g </li>
+      <li id="lb"> b </li>
+      <li id="li"> i </li>
+      <li id="le"> e </li>
+    </ul>
+
+    <ul id="unsorted_money">
+      <li id="m3"> R$ 73,00 </li>
+      <li id="m2"> R$ 5,00 </li>
+      <li id="m1"> R$ - 350,80 </li>
+      <li id="m4"> R$ 500,75 </li>
+      <li id="m7"> R$ 2.999,50 </li>
+      <li id="m5"> R$ 1.000,00 </li>
+      <li id="m6"> R$ 2.999,25 </li>
+      <li id="m9"> R$ 5.500,00 </li>
+      <li id="m8"> R$ 5.000,00 </li>
+      <li id="m0"> R$ -5.000,00 </li>
+    </ul>
   <script>
+    $('#unsorted_money').simpleLi({option: 'all', action: 'sort_money', order: 'desc', separator: ','}, function() {
+      $(this).css({'background-color': 'gray' })
+    }).simpleLi({option: 'odd'}, function() {
+      $(this).css({'background-color': 'white' })  
+    });
+
+/*
     // Selects only even
     $('ul').simpleLi({option: 'even'}, function() {
       $(this).css({'background-color': 'red'});
@@ -57,7 +103,7 @@
     });
 
     // Selects only the third element (index 2).
-    $('ul').simpleLi({option: 'only-2', each: true}, function(index) {
+    $('ul').simpleLi({option: 'only-2'}, function() {
       $(this).css({'background-color': 'orange'});
       $(this).html('Click me!');
       $(this).click(function() { alert('Yay!') });
@@ -74,6 +120,33 @@
         }
       );
     });
+
+    // Selects all elements starting at 5 and reverse them.
+    $('ul').simpleLi({option: 'all', action: 'reverse', start_at: 5}, function(index) {
+      $(this).css({'background-color': 'gray'});
+    });
+
+    // Selects all elements and sort by number, with desc order.
+    $('#sorted_number').simpleLi({option: 'all', action: 'sort_number', order: 'desc'});
+
+    // Selects all elements and sort by number, with asc order.
+    $('#unsorted_number').simpleLi({option: 'all', action: 'sort_number'});
+
+    // Selects all elements and sort by letter, with desc order.
+    $('#sorted_letter').simpleLi({option: 'all', action: 'sort_letter', order: 'desc'});
+
+    // Selects all elements and sort by letter, with asc order.
+    $('#unsorted_letter').simpleLi({option: 'all', action: 'sort_letter'});
+
+    // 1- Selects all elemnts and sort them by money, with ',' separator
+    // 2- Change the background of the collection to gray
+    // 3- Chain the call, select all odd elements and change the background to white..
+    $('#unsorted_money').simpleLi({option: 'all', action: 'sort_money', separator: ','}, function() {
+      $(this).css({'background-color': 'gray' })
+    }).simpleLi({option: 'odd'}, function() {
+      $(this).css({'background-color': 'white' })  
+    });
+*/
   </script>
   </body>
 </html>

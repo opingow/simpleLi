@@ -7,6 +7,9 @@ The plugin requires an object that may contain keys:
 + option      (expect a string)
 + start_at  (expect an integer)
 + each         (expect a boolean)
++ action (expects a string)
++ order (expects a string)
++ separator (expects a string)
 
 ---
 
@@ -22,7 +25,7 @@ Options:
 + first-[number]  (ex: first-3)
 + last-[number]   (ex: last-2)
 
-**ATENTION:** The *every* option uses nth-child, which starts with index 1, instead of 0
+** The *every* option uses nth-child, which starts with index 1, instead of 0 **
 
 ---
 
@@ -32,7 +35,7 @@ Options:
 
 + number (by default it is zero)
 
-**ATENTION:** The options *even*, *odd* and *last* ignores the start_at
+** The options *even*, *odd* and *last* ignores the start_at**
 
 ---
 
@@ -41,6 +44,44 @@ Options:
 Options:
 
 + boolean (by default it is false)
+
+---
+
+#### The *action* key serves to specify an action to the elements selected.
+
+Options:
+
++ remove
++ reverse
++ show
++ hide
++ sort_letter (sort alphabetically)
++ sort_number (sort by number)
++ sort_money  (sort by money values)
+
+**The *sort* actions works with the option *all*.**
+
+---
+
+#### The *order* key serves to tell the order of the sort action.
+
+Options:
+
++ asc (default)
++ desc
+
+*It will be ignored if not used in a sort action.*
+---
+
+#### The *separator* key serves to tell which character is used to separate the decimal places in a value. 
+
+Options:
+
++ string (the default is the character '.')
+
+Ex: R$ 15,25 has separator *','* 
+
+*It will be ignored if not used in a sort action.*
 
 ---
 
